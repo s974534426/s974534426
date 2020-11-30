@@ -6,16 +6,10 @@ import school_env_builder
 from random import randint
 
 
-class Agent:
-  """Define a agent named to interact with the environment.
+class FoolishStudent:
   
-  We define the agent named Song Lei. He is a very foolish agent that need to 
-  interact with the school environment to be learn knowledge. After study, 
-  he will take a break.
-  """
-  
-  def __init__(self):
-    self.agent_name = 'SongLei'
+  def __init__(self, agent_name):
+    self.agent_name = agent_name
     self.env = school_env_builder.build()
     
   def study(self, epochs):
@@ -36,7 +30,8 @@ class Agent:
         
         
 if __name__ == '__main__':
-  sl = Agent()
-  sl.study(0)
-  sl.take_a_break(10000000000)
+  sl = FoolishStudent('songlei')
+  for day in range(365):
+    sl.study(0)
+    sl.take_a_break(10000000000)
 ```
